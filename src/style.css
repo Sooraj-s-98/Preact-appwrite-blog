@@ -14,6 +14,113 @@ h1 {
 	margin-bottom: 60px;
 }
 
+
+.circle {
+	width: 50%;
+	height: 70%;
+	position: absolute;
+	background: #f02e65;
+	border-radius: 0 0 100% 0;
+  }
+  
+  .form {
+	background-color: #fff;
+	margin: auto;
+	width: 90%;
+	max-width: 400px;
+	padding: 4.5em 3em;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+	text-align: center;
+	/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.877);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(12.2px);
+	-webkit-backdrop-filter: blur(12.2px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: 1s;
+  }
+  .form:hover {
+	transform: scale(1.02);
+	transition: 1s;
+  }
+  
+  .form__title {
+	font-size: 2rem;
+	margin-bottom: 0.5em;
+  }
+  .form__container {
+	margin-top: 3em;
+	display: grid;
+	gap: 2.5em;
+  }
+  .form__group {
+	position: relative;
+	color: #5757577e;
+  }
+  .form__input {
+	width: 100%;
+	background: none;
+	--color: #706c6c;
+	font-size: 1rem;
+	padding: 0.6em 0.3em;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid var(--color);
+	font-family: "Roboto", sans-serif;
+  }
+  .form__input:not(:placeholder-shown) {
+	color: #4d4646;
+  }
+  
+  .form__input:focus + .form__label,
+  .form__input:not(:placeholder-shown) + .form__label {
+	transform: translateY(-12px) scale(0.7);
+	transform-origin: left top;
+	color: #f02e65;
+  }
+  .form__label {
+	color: var(--color);
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 5px;
+	transform: translateY(10px);
+	transition: transform 0.5s, color 0.3s;
+  }
+  .form__submit {
+	background: #f02e65;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	padding: 0.8em 0;
+	border: none;
+	border-radius: 0.5em;
+  }
+  .form__line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #f02e65;
+	transform: scale(0);
+	transform: left bottom;
+	transition: transform 0.4s;
+  }
+  
+  .form__input:focus ~ .form__line,
+  .form__input:not(:placeholder-shown) ~ .form__line {
+	transform: scale(1);
+  }
+  @media (max-width: 425px) {
+	.form__title {
+	  font-size: 1.8rem;
+	}
+  }
+
 .add-blog-btn{
 	width: 100px;
 	margin-left: 20px;
@@ -25,89 +132,12 @@ h1 {
 	color: #f02e65;
 }
 
-.delete-btn{
-	width: 30px;
-	margin-left: 20px;
-	cursor: pointer;
-	border-radius: 50px;
-	color: #f02e65;
-	border: 1px solid #f02e65;
-	min-width: 80px;
-	height: 40px;
-}
 
 .cont{
 	height: 80vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.signup{
-	border: 1px solid #E2E2E2;
-	width: 350px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-	gap: 20px;
-}
-
-.fields{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	gap: 10px;
-}
-
-input{
-	text-indent: 10px;
-	width: 300px;
-	height: 40px;
-	border: none;
-	border-radius: 50px;
-	background-color: rgba(2, 2, 2, 0.07);
-    border: 1px solid rgba(0, 0, 0, 0.02);
-	font-size: 17px;
-}
-
-.login{
-	border: 1px solid #E2E2E2;
-	width: 350px;
-	display: flex;
-	gap: 20px;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.signup-form{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 350px;
-	height: 80px;
-	font-size: 30px;
-	color: white;
-	background-color: #f02e65;
-	border: 1px solid #f02e65;
-}
-
-.login-form{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 350px;
-	height: 80px;
-	font-size: 30px;
-	color: white;
-	background-color: #f02e65;
-	border: 1px solid #f02e65;
 }
 
 .links{
@@ -156,23 +186,6 @@ p{
 	height: 40px;
 }
 
-.signup-btn{
-	margin-top: 30px;
-	width: 260px;
-	margin-bottom: 40px;
-	height: 35px;
-	font-size: 15px;
-	border: none;
-	border-radius: 50px;
-	cursor: pointer;color: white;
-	background-color: #f02e65;
-	border: 1px solid #f02e65;
-}
-
-.signup-btn:hover{
-	background-color: white;
-	color: #f02e65;
-}
 
 .have-acc{
 	margin-bottom: 10px;
