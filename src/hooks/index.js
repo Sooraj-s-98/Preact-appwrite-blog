@@ -1,6 +1,6 @@
 import api from "../api/api";
 import { Server } from "../utils/config";
-import { useEffect, useReducer } from 'preact/hooks';
+import { useEffect, useReducer } from "preact/hooks";
 
 export const FetchState = {
   FETCH_INIT: 0,

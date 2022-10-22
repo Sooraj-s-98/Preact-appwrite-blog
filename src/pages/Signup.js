@@ -1,6 +1,8 @@
 import api from "../api/api";
 import { signal } from "@preact/signals";
 import { Link } from "preact-router/match";
+import { route } from "preact-router";
+import { FetchState, useGetUser } from "../hooks";
 
 const name = signal("");
 const email = signal("");
@@ -19,21 +21,29 @@ const setPassword = (e) => {
 };
 
 export default function Signup() {
-  const signUp = async () => {
-    console.log("signUp");
-    const user = await api.createAccount(
-      email.value,
-      password.value,
-      name.value
-    );
-    console.log("user", user);
-    await api.createSession(email.value, password.value);
+  const [{}, dispatch] = useGetUser();
+  const signUp = async (e) => {
+    e.preventDefault();
+    console.log("signUp", e);
+    dispatch({ type: FetchState.FETCH_INIT });
+    try {
+      const user = await api.createAccount(
+        email.value,
+        password.value,
+        name.value
+      );
+      await api.createSession(email.value, password.value);
+      dispatch({ type: FetchState.FETCH_SUCCESS, payload: user });
+      route("/", true);
+    } catch (e) {
+      dispatch({ type: FetchState.FETCH_FAILURE });
+    }
   };
 
   return (
     <div>
       <div class="circle" />
-      <form class="form" onSubmit={Signup}>
+      <form class="form" onSubmit={signUp}>
         <h2 class="form__title">SignUp</h2>
         <div class="form__container">
           <div class="form__group">
@@ -61,7 +71,7 @@ export default function Signup() {
               onInput={setPassword}
             />
           </div>
-          <input type="submit" class="form__submit" value="SignUp" />
+          <input type="submit" class="form__submit" value="Sign UP" />
           <Link href="/login" class="links">
             Have an Account!
           </Link>

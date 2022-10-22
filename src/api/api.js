@@ -1,4 +1,4 @@
-import { Client as Appwrite, Databases, Account } from 'appwrite';
+import { Client as Appwrite, Databases, Account , ID } from 'appwrite';
 import { Server } from '../utils/config';
 
 let api = {
@@ -18,7 +18,7 @@ let api = {
   },
 
   createAccount: (email, password, name) => {
-    return api.provider().account.create('unique()', email, password, name);
+    return api.provider().account.create( ID.unique(), email, password, name);
   },
 
   getAccount: () => {

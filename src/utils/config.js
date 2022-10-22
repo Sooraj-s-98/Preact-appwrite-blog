@@ -4,5 +4,3 @@ export const Server = {
     collectionID : process.env.PREACT_APP_COLLECTION_ID,
     databaseID : process.env.PREACT_APP_DATABASE_ID,
 }
-
-console.log(Server)

@@ -1,8 +1,8 @@
 import api from "../api/api";
-import { v4 as uuid } from "uuid";
 import { signal } from "@preact/signals";
 import { route } from "preact-router";
 import { Link } from "preact-router/match";
+import { FetchState, useGetUser } from "../hooks";
 
 const email = signal("");
 const password = signal("");
@@ -16,11 +16,17 @@ const setPassword = (e) => {
 };
 
 export default function Login() {
-
+  const [{}, dispatch] = useGetUser();
   const login = async (e) => {
     e.preventDefault();
-    await api.createSession(email.value, password.value);
-    const user = await api.getAccount();
+    dispatch({ type: FetchState.FETCH_INIT });
+    try {
+      await api.createSession(email.value, password.value);
+      const data = await api.getAccount();
+      dispatch({ type: FetchState.FETCH_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FetchState.FETCH_FAILURE });
+    }
     route("/", true);
   };
 
