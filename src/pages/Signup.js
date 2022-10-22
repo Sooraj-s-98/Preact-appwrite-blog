@@ -25,6 +25,7 @@ export default function Signup() {
     const signUp =async () => {
         console.log("signUp")
         const user = await api.createAccount(email.value, password.value, name.value);
+        console.log("user", user)
         await api.createSession(email.value, password.value);
     }
 

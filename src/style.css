@@ -211,33 +211,5 @@ p{
 	font-size: 17px;
 }
 
-.goal-btn{
-	border-radius: 50px;
-	cursor: pointer;
-	color: white;
-	color: #f02e65;
-	border: 1px solid #f02e65;
-	min-width: 60px;
-	height: 40px;
-}
 
-.btn-cont{
-	display: flex;
-	gap: 15px;
-}
 
-.uncheck{
-	font-size: 30px;
-	color: black;
-	border: 1px solid rgb(44, 249, 3);
-}
-
-.check{
-	font-size: 20px;
-	color: black;
-	border: 1px solid rgb(44, 249, 3);
-}
-
-.delete{
-	font-size: 20px;
-}

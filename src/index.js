@@ -2,11 +2,11 @@ import './style';
 import Blog from './pages/Blog';
 import Signup from './pages/Signup';
 import Login from './pages/Login'
-import { signal } from "@preact/signals";
 import { Router } from 'preact-router';
+import {useGetUser} from "./hooks"
 
 export default function App() {
-	const user = signal(0);
+	const [{ user, isLoading, isError }, dispatch] = useGetUser();
 	return (
 		<div>
 			<Router>

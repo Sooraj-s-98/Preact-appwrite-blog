@@ -20,7 +20,7 @@ export default function Login() {
     const login =async (e) => {
         e.preventDefault()
         await api.createSession(email.value, password.value);
-        const data = await api.getAccount();
+        const user = await api.getAccount();
         route('/', true)
     }
 
