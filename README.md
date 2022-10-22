@@ -1,6 +1,6 @@
 # 🔖 Blog With Preact + Appwrite
 
-A simple todo app built with Appwrite and Preact
+A simple blog app built with Appwrite and Preact
 
 
 https://user-images.githubusercontent.com/52352285/197347993-261dedb9-8f17-43e7-a978-ef90a69eb70a.mov
