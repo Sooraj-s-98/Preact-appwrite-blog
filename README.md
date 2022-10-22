@@ -1,8 +1,9 @@
-# 🔖 Todo With Preact
+# 🔖 Blog With Preact + Appwrite
 
 A simple todo app built with Appwrite and Preact
 
-If you simply want to try out the App, go ahead and check out the demo at 
+
+https://user-images.githubusercontent.com/52352285/197347993-261dedb9-8f17-43e7-a978-ef90a69eb70a.mov
 
 
 
@@ -10,14 +11,17 @@ We need to make a few configuration changes to your Appwrite server.
 
 1. Add a new Web App in Appwrite and enter the endpoint of your website (localhost, <project-name>.vercel.app etc)
 
+<img width="1075" alt="Database" src="https://user-images.githubusercontent.com/52352285/197348015-7633ec50-3c57-49ea-b4a7-757790625486.png">
 
 
 2. Create a new collection with the following properties
 
+<img width="1071" alt="Attributes" src="https://user-images.githubusercontent.com/52352285/197348019-3718a2ee-ff48-4bb8-87fe-5222186f32f9.png">
 
 
 3. Add the following permissions to your collection.
 
+<img width="1075" alt="Permissions" src="https://user-images.githubusercontent.com/52352285/197348025-96c98112-1e2d-416a-bd35-ae8f364e9f16.png">
 
 
 
